@@ -603,6 +603,21 @@ class SvgPicture extends StatefulWidget {
 
   @override
   State<SvgPicture> createState() => _SvgPictureState();
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DoubleProperty('width', width, defaultValue: null));
+    properties.add(DoubleProperty('height', width, defaultValue: null));
+    properties.add(EnumProperty<BoxFit>('fit', fit, defaultValue: null));
+    properties.add(DiagnosticsProperty<Alignment>('alignment', alignment, defaultValue: null));
+    properties.add(DiagnosticsProperty<PictureProvider>('pictureProvider', pictureProvider));
+    properties.add(DiagnosticsProperty<WidgetBuilder>('placeholderBuilder', placeholderBuilder));
+    properties.add(DiagnosticsProperty<bool>('matchTextDirection', matchTextDirection));
+    properties.add(DiagnosticsProperty<bool>('allowDrawingOutsideViewBox', allowDrawingOutsideViewBox));
+    properties.add(StringProperty('semanticsLabel', semanticsLabel, defaultValue: null));
+    properties.add(DiagnosticsProperty<bool>('excludeFromSemantics', excludeFromSemantics));
+  }
 }
 
 class _SvgPictureState extends State<SvgPicture> {
